@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Lavanya, aspiring full stack developer. Projects, experience and contact."><meta name="theme-color" content="#04060a"><title>Lavanya | Aspiring Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+:root{--bg:#04060a;--tx:#e6efff;--mu:#7f90ad;--cy:#4de1ff;--bl:#4f8cff;--vi:#9b8cff;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:inherit;margin:0}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{background:var(--bg);color:var(--tx);font:400 16px/1.55 Sora,system-ui,sans-serif;overflow:hidden}
+body{height:100%}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+#root{position:fixed;inset:0;z-index:2;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.mono,.term,.fld,.hud,.tag{font-family:'JetBrains Mono',monospace}
+.pg{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;display:flex;padding:72px 56px 92px 22px;overscroll-behavior:contain}
+.in{margin:auto;width:100%;max-width:1120px}
+.ctr{text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
+h2{font-size:clamp(2rem,6vw,4rem)}
+.mu{color:var(--mu)}.lead{max-width:52ch;color:var(--mu)}
+h1{font-size:clamp(2.8rem,13vw,7rem);font-weight:800;display:flex;overflow:hidden;perspective:800px;padding-bottom:.1em;margin-left:-.04em}
+.ch{display:inline-block;background:linear-gradient(180deg,#fff 30%,#7aa6d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-weight:600;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--cy);margin:6px 0 18px}
+.hd{margin-bottom:28px}.hd p{margin-top:10px;color:var(--mu)}
+.gl{position:relative;border-radius:18px;background:linear-gradient(180deg,rgba(18,26,40,.62),rgba(9,14,24,.5));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(120,190,255,.08);overflow:hidden}
+.gl::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--ang),transparent 0 72%,var(--cy),var(--vi) 88%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:rot 8s linear infinite;opacity:.5;pointer-events:none}
+.gl::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(77,225,255,.12),transparent 70%);pointer-events:none;opacity:0;transition:opacity .3s}
+.gl:hover::after{opacity:1}.gl:hover::before{opacity:1}
+@keyframes rot{to{--ang:360deg}}
+.btn{border:0;cursor:pointer;font:600 1rem Sora;padding:16px 30px;border-radius:12px;color:#021018;background:linear-gradient(135deg,var(--cy),var(--bl));box-shadow:0 0 30px rgba(77,225,255,.28);transition:box-shadow .3s,filter .3s,transform .15s;text-decoration:none;display:inline-block}
+.btn:hover{filter:brightness(1.12);box-shadow:0 0 50px rgba(77,225,255,.5)}.btn:active{transform:scale(.96)}
+.btn.gh{background:rgba(255,255,255,.04);color:var(--tx);border:1px solid rgba(120,190,255,.3);box-shadow:none}
+.btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center}
+.hero>div{min-width:0}.hc{height:min(66vh,540px)}
+.term{padding:16px 18px;font-size:13px;line-height:1.75;color:#b8cbe6;max-width:560px;min-height:196px}
+.term .p{color:var(--cy)}.term .o{color:var(--mu);padding-left:14px}
+.cur{display:inline-block;width:8px;height:14px;background:var(--cy);vertical-align:-2px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.pj{display:grid;grid-template-columns:230px 1fr;gap:18px}
+.pl{display:grid;gap:8px;align-content:start}
+.pl button{all:unset;cursor:pointer;padding:14px 16px;border-radius:12px;border:1px solid rgba(120,190,255,.1);color:var(--mu);font-weight:600;transition:.25s}
+.pl button:hover{color:var(--tx);transform:translateX(4px);border-color:rgba(120,190,255,.35)}
+.pl button.on{color:var(--tx);background:rgba(77,225,255,.08);border-color:var(--cy)}
+.pp{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;padding:26px;min-height:380px}
+.pp h2{font-size:clamp(1.7rem,4vw,2.7rem);margin-bottom:12px}.pp p{color:var(--mu);margin-bottom:16px}
+.pv{height:300px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.tag{font-size:12px;padding:5px 11px;border-radius:8px;border:1px solid rgba(77,225,255,.25);color:var(--cy)}
+.sys{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.mt{display:grid;gap:18px}.mt b{font-weight:600}.seg{display:flex;gap:4px;margin-top:8px}.seg i{flex:1;height:8px;border-radius:3px;background:rgba(255,255,255,.08)}.seg i.on{background:linear-gradient(90deg,var(--cy),var(--bl));box-shadow:0 0 10px rgba(77,225,255,.5)}
+form{display:grid;gap:14px;width:min(560px,100%);text-align:left;padding:24px}
+.fld{display:grid;gap:6px;font-size:12px;color:var(--mu)}
+input,textarea{font:400 15px Sora;color:var(--tx);background:rgba(255,255,255,.03);border:1px solid rgba(120,190,255,.16);border-radius:10px;padding:13px;outline:none;transition:.25s}
+input:focus,textarea:focus{border-color:var(--cy);box-shadow:0 0 0 3px rgba(77,225,255,.15)}
+.er{color:#ff8a9b;font-size:12px}
+.doc{display:block;width:min(310px,78vw);aspect-ratio:3/4;position:relative;color:var(--tx);text-decoration:none;cursor:pointer;padding:26px}
+.doc i{display:block;height:7px;border-radius:4px;background:rgba(120,190,255,.16);margin-top:14px;transform-origin:left}
+.dl{position:absolute;left:0;bottom:0;height:3px;background:var(--cy);box-shadow:0 0 12px var(--cy)}
+.scan{position:absolute;left:0;right:0;top:0;height:2px;background:var(--cy);box-shadow:0 0 18px var(--cy);opacity:0}
+.doc:hover .scan{animation:sw 1.8s ease-in-out infinite}@keyframes sw{0%{top:0;opacity:0}10%,90%{opacity:1}100%{top:100%;opacity:0}}
+.dbt{position:absolute;left:26px;right:26px;bottom:26px;text-align:center;padding:11px;border-radius:10px;border:1px solid rgba(77,225,255,.35);color:var(--cy);font-size:13px}
+.art{padding:18px 22px;display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px;transition:transform .3s}.art:hover{transform:translateX(8px)}
+.art b{font-weight:600;font-size:1.1rem}.art small{color:var(--mu);font-family:'JetBrains Mono',monospace;font-size:12px}
+.net{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;width:100%;max-width:880px}
+.nc{display:grid;gap:14px;padding:26px;text-align:left;text-decoration:none;color:var(--tx)}.nc svg{color:var(--cy)}
+.rail{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:5;display:grid;gap:16px}
+.rail button{all:unset;cursor:pointer;width:16px;height:2px;background:rgba(255,255,255,.25);transition:.35s;position:relative}
+.rail button::after{content:"";position:absolute;inset:-8px -4px}.rail button:hover{background:var(--tx);width:24px}
+.rail button.on{width:30px;background:var(--cy);box-shadow:0 0 10px var(--cy)}
+.rail span{position:absolute;right:40px;top:-9px;font:12px 'JetBrains Mono';opacity:0;white-space:nowrap;pointer-events:none;transition:.2s;color:var(--cy)}
+@media(hover:hover){.rail button:hover span{opacity:1}}
+.hud{position:fixed;left:22px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:5;font-size:12px;color:var(--mu);display:grid;gap:6px;width:150px}
+.hud b{color:var(--cy);font-weight:500}.hud div{height:2px;background:rgba(255,255,255,.1)}.hud i{display:block;height:100%;background:var(--cy);transform-origin:left;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.brand{position:fixed;left:22px;top:calc(18px + env(safe-area-inset-top,0px));z-index:5;font:500 13px 'JetBrains Mono'}
+.arr{position:fixed;right:20px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;gap:8px}
+.arr button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;border:1px solid rgba(120,190,255,.2);background:rgba(10,16,28,.6);transition:.25s}
+.arr button:hover{border-color:var(--cy);color:var(--cy);transform:translateY(-2px)}.arr button:active{transform:scale(.9)}
+.intro{position:fixed;inset:0;z-index:20;background:#02040a;display:grid;place-content:center;gap:14px;justify-items:center;font:13px 'JetBrains Mono';color:var(--mu)}
+.intro i{display:block;width:220px;height:2px;background:var(--cy);box-shadow:0 0 14px var(--cy);transform-origin:left}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+@media(min-width:800px){.pg{padding:76px 7vw 96px}}
+@media(max-width:799px){.hero,.pj,.sys,.pp{grid-template-columns:1fr}.hc{height:250px;order:-1}.pl{grid-auto-flow:column;overflow-x:auto}.pl button{white-space:nowrap}.pv{height:220px}.hud{display:none}}
+.btn{position:relative;overflow:hidden}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s}.btn:hover::after{transform:translateX(120%)}
+.ccard{max-width:520px;padding:18px 20px;}.chd{display:flex;justify-content:space-between;margin-bottom:10px;color:var(--cy);font-weight:600}
+.crow{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:9px 0;border-top:1px solid rgba(120,190,255,.1)}.crow span{color:var(--cy);font-size:12px}.crow b{font-weight:600}
+.st{display:inline-flex;gap:8px;align-items:center;font:12px 'JetBrains Mono',monospace;color:var(--cy);border:1px solid rgba(77,225,255,.25);padding:6px 12px;border-radius:99px;margin-bottom:14px}.st i{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:bl 1.6s ease-in-out infinite}
+.btns.l{justify-content:flex-start;margin:0 0 18px}
+.tl{position:relative;padding-left:26px}.tl::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--cy),transparent)}.tli{position:relative}.dot{position:absolute;left:-26px;top:29px;width:12px;height:12px;border-radius:50%;background:var(--cy);box-shadow:0 0 12px var(--cy)}
+.net2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.nc2{padding:20px;display:grid;gap:4px}.nc2 small{color:var(--mu);font:12px 'JetBrains Mono',monospace}
+.nc span{word-break:anywhere}
+.dr{display:grid;gap:2px;margin-top:16px;font-size:13px}.dr span{color:var(--cy);font-size:11px}.dr b{font-weight:600}
+@media(prefers-reduced-motion:reduce){.gl::before,.cur,.st i{animation:none}}
+</style></head><body>
+<canvas id="gl"></canvas><div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/framer-motion@10.18.0/dist/framer-motion.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const{motion,AnimatePresence,animate}=window.Motion||window.FramerMotion;
+const{useState,useEffect,useRef,useCallback}=React;
+const h=htm.bind(React.createElement);
+const CFG={email:'lavanyagopinath456@gmail.com',resume:'Lavanya_Resume.pdf',gh:'https://github.com/lavanya236813',li:'https://www.linkedin.com/in/lavanya-gopinath-a3a114317'};
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,EA=[.22,1,.36,1];
+let BASE=2.1;setTimeout(()=>BASE=.45,3000);window.__L=0;
+const A=d=>({initial:{opacity:0,y:28},animate:{opacity:1,y:0},transition:{delay:BASE+d,duration:.8,ease:EA}});
+
+/* WebGL shader universe: circuit grid with data pulses, flows forward one layer per page */
+(function(){
+ const FS=`precision highp float;uniform float t,L;uniform vec2 r,m;
+ float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+ float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.)),f.x),f.y);}
+ void main(){vec2 uv=gl_FragCoord.xy/r,p=(gl_FragCoord.xy-.5*r)/r.y;vec3 c=vec3(.015,.022,.038);
+  float f=n(p*2.2+vec2(t*.03,L*.4))*.6+n(p*4.5-t*.02)*.4;
+  c+=mix(vec3(.02,.1,.18),vec3(.1,.06,.2),uv.x)*pow(f,3.)*1.6;
+  vec2 g=p*12.+vec2(L*1.7,L*3.),d=abs(fract(g+.5)-.5);float fade=exp(-dot(p,p)*.9);
+  float ln=1.-smoothstep(0.,.025,min(d.x,d.y));
+  vec2 q=vec2((uv.x-m.x)*r.x/r.y,uv.y-m.y);float near=exp(-dot(q,q)*10.);
+  c+=vec3(.25,.6,.9)*ln*(.035+.22*near)*fade;
+  float rw=floor(g.y+.5),cl=floor(g.x+.5),s1=h(vec2(rw,3.)),s2=h(vec2(cl,7.));
+  float hp=smoothstep(.9,1.,fract(g.x*.06-t*.05*(.4+s1)+s1))*(1.-smoothstep(0.,.03,d.y))*step(.55,s1);
+  float vp=smoothstep(.9,1.,fract(g.y*.06-t*.045*(.4+s2)+s2))*(1.-smoothstep(0.,.03,d.x))*step(.6,s2);
+  c+=(vec3(.2,.85,1.)*hp+vec3(.6,.5,1.)*vp)*.7*fade+vec3(.1,.3,.5)*near*.2;
+  c*=1.-1.1*dot(uv-.5,uv-.5);gl_FragColor=vec4(c,1.);}`;
+ const cv=document.getElementById('gl'),r=new THREE.WebGLRenderer({canvas:cv,antialias:false});r.setPixelRatio(Math.min(devicePixelRatio,1.25));
+ const u={t:{value:0},L:{value:0},r:{value:new THREE.Vector2()},m:{value:new THREE.Vector2(.5,.5)}},s=new THREE.Scene(),cam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+ s.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),new THREE.ShaderMaterial({uniforms:u,vertexShader:'void main(){gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:FS})));
+ const rs=()=>{r.setSize(innerWidth,innerHeight,false);u.r.value.set(innerWidth*r.getPixelRatio(),innerHeight*r.getPixelRatio())};rs();addEventListener('resize',rs);
+ const mt=new THREE.Vector2(.5,.5);addEventListener('pointermove',e=>{mt.set(e.clientX/innerWidth,1-e.clientY/innerHeight);const g=e.target.closest&&e.target.closest('.gl');if(g){const b=g.getBoundingClientRect();g.style.setProperty('--mx',e.clientX-b.left+'px');g.style.setProperty('--my',e.clientY-b.top+'px')}},{passive:true});
+ (function loop(){requestAnimationFrame(loop);if(!RM)u.t.value+=.016;u.m.value.lerp(mt,.06);u.L.value+=(window.__L-u.L.value)*.04;r.render(s,cam)})();
+})();
+
+/* 3D holographic AI core: neural wireframe, nodes, rings, orbiting particles */
+const COL=[0x4de1ff,0x4f8cff,0x9b8cff,0x5eead4];
+function Core({hero,k=0,hot}){
+ const ref=useRef(),st=useRef({hot:false,mx:0,my:0});st.current.hot=hot;
+ useEffect(()=>{
+  const el=ref.current,W=()=>el.clientWidth||300,H=()=>el.clientHeight||300;
+  const r=new THREE.WebGLRenderer({alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(W(),H());el.appendChild(r.domElement);
+  const s=new THREE.Scene(),c=new THREE.PerspectiveCamera(40,W()/H(),.1,100);c.position.z=hero?9.5:5.4;
+  const col=COL[k%4],B=THREE.AdditiveBlending,G=[()=>new THREE.IcosahedronGeometry(hero?1.9:1.4,hero?2:1),()=>new THREE.OctahedronGeometry(1.5,2),()=>new THREE.TorusKnotGeometry(1,.34,110,8),()=>new THREE.DodecahedronGeometry(1.4,1)][hero?0:k%4]();
+  const g=new THREE.Group();s.add(g);
+  const wire=new THREE.LineSegments(new THREE.WireframeGeometry(G),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.4,blending:B}));
+  const pts=new THREE.Points(G,new THREE.PointsMaterial({color:0xffffff,size:hero?.06:.05,transparent:true,opacity:.9,blending:B}));
+  const inner=new THREE.Mesh(new THREE.IcosahedronGeometry(hero?.75:.5,1),new THREE.MeshBasicMaterial({color:col,wireframe:true,transparent:true,opacity:.9,blending:B}));
+  g.add(wire,pts,inner);
+  let rings=[],orb,sats=[],pul=[];
+  if(hero){
+   [[2.7,0x4f8cff,1.2,0],[3.2,0x9b8cff,-.5,.7]].forEach(([R,cl,rx,ry])=>{const m=new THREE.Mesh(new THREE.TorusGeometry(R,.012,8,180),new THREE.MeshBasicMaterial({color:cl,transparent:true,opacity:.7,blending:B}));m.rotation.set(rx,ry,0);m.userData.R=R;g.add(m);rings.push(m);
+    const sa=new THREE.Mesh(new THREE.SphereGeometry(.08,12,12),new THREE.MeshBasicMaterial({color:0xffffff}));m.add(sa);sats.push(sa)});
+   const N=260,pa=new Float32Array(N*3);for(let i=0;i<N;i++){const a=Math.random()*6.283,R=2.3+Math.random()*1.5;pa.set([Math.cos(a)*R,(Math.random()-.5)*1.4,Math.sin(a)*R],i*3)}
+   const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pa,3));
+   orb=new THREE.Points(pg,new THREE.PointsMaterial({color:0x8fd8ff,size:.035,transparent:true,opacity:.8,blending:B}));g.add(orb);
+   pul=[0,1].map(()=>{const m=new THREE.Mesh(new THREE.RingGeometry(1.95,2,96),new THREE.MeshBasicMaterial({color:0x4de1ff,transparent:true,opacity:0,side:THREE.DoubleSide,blending:B}));g.add(m);return m});
+  }
+  const mm=e=>{st.current.mx=e.clientX/innerWidth-.5;st.current.my=e.clientY/innerHeight-.5};addEventListener('pointermove',mm,{passive:true});
+  const ro=new ResizeObserver(()=>{r.setSize(W(),H());c.aspect=W()/H();c.updateProjectionMatrix()});ro.observe(el);
+  let id,t=0;(function loop(){id=requestAnimationFrame(loop);const S=st.current;t+=RM?0:.01*(S.hot?3:1);
+   wire.rotation.y=pts.rotation.y=t*.6;inner.rotation.y=-t*1.2;inner.rotation.x=t*.7;wire.material.opacity=.3+.14*Math.sin(t*3);
+   if(hero){pul.forEach((m,i)=>{const f=(t*.35+i*.5)%1;m.scale.setScalar(1+f*1.4);m.material.opacity=(1-f)*.45});orb.rotation.y=t*.45;sats.forEach((m,i)=>{const R=rings[i].userData.R,a=t*(i?-1.1:1.4);m.position.set(Math.cos(a)*R,Math.sin(a)*R,0)})}
+   g.rotation.y+=(S.mx*1.1-g.rotation.y)*.05;g.rotation.x+=(S.my*.7-g.rotation.x)*.05;g.scale.setScalar(g.scale.x+((S.hot?1.12:1)-g.scale.x)*.1);
+   r.render(s,c)})();
+  return()=>{cancelAnimationFrame(id);removeEventListener('pointermove',mm);ro.disconnect();r.dispose();el.contains(r.domElement)&&el.removeChild(r.domElement)};
+ },[]);
+ return h`<div ref=${ref} style=${{width:'100%',height:'100%'}} aria-hidden="true"/>`;
+}
+function Mag({children,className='',...p}){const r=useRef();
+ const mv=e=>{const b=r.current.getBoundingClientRect();gsap.to(r.current,{x:(e.clientX-b.left-b.width/2)*.3,y:(e.clientY-b.top-b.height/2)*.4,duration:.4,ease:'power3.out'})};
+ const lv=()=>gsap.to(r.current,{x:0,y:0,duration:.9,ease:'elastic.out(1,.4)'});
+ return h`<button ref=${r} className=${'btn '+className} onPointerMove=${mv} onPointerLeave=${lv} ...${p}>${children}</button>`;
+}
+function Num({to,d=0}){const[v,s]=useState(0);useEffect(()=>{const a=animate(0,to,{duration:1.6,delay:d,ease:'easeInOut',onUpdate:x=>s(Math.round(x))});return()=>a.stop()},[to]);return v}
+const Hd=({t,sub})=>h`<${motion.div} className="hd" ...${A(0)}><h2>${t}</h2>${sub&&h`<p>${sub}</p>`}<//>`;
+const IC={github:'<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>',linkedin:'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/>'};
+const Ic=({n,s=34})=>h`<svg width=${s} height=${s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML=${{__html:IC[n]}}/>`;
+
+function Term({lines,start}){
+ const[n,setN]=useState(0);
+ useEffect(()=>{if(RM){setN(1e4);return}let i;const to=setTimeout(()=>{i=setInterval(()=>setN(x=>x+2),30)},start*1000);return()=>{clearTimeout(to);clearInterval(i)}},[]);
+ let b=n;
+ return h`<${motion.div} className="gl term" ...${A(.5)}>${lines.map(([c,o],i)=>{const a=c.slice(0,Math.max(0,b));b-=c.length;const z=o.slice(0,Math.max(0,b));b-=o.length;return a?h`<div key=${i}><span className="p">$ </span>${a}<div className="o">${z}</div></div>`:null})}<i className="cur"/><//>`;
+}
+function Card(){return h`<${motion.div} className="gl ccard" initial=${{opacity:0,y:30}} animate=${{opacity:1,y:0}} transition=${{delay:BASE+.5,duration:.8,ease:EA}}><div className="chd"><span>About</span></div>${[['Education','B.Tech Computer Science and Engineering, final year'],['University','Dhanalakshmi Srinivasan University'],['Focus','Full stack web apps, backend APIs and AI chatbots'],['Experience','2 internships, 4 projects, 2 certificates']].map(([k,v],i)=>h`<${motion.div} key=${k} className="crow" initial=${{opacity:0,y:12}} animate=${{opacity:1,y:0}} transition=${{delay:BASE+.8+i*.1}}><span className="mono">${k}</span><b>${v}</b><//>`)}<//>`}
+/* 1. Hero + About */
+function Hero({go}){
+ useEffect(()=>{if(RM)return;const tw=gsap.from('.ch',{yPercent:115,rotateX:-70,opacity:0,stagger:.06,duration:1.1,ease:'expo.out',delay:BASE-.1});return()=>tw.kill()},[]);
+ return h`<div className="in hero"><div>
+  <${motion.div} className="st" ...${A(0)}><i/>Open to full stack roles<//>
+  <h1 aria-label="Lavanya">${'Lavanya'.split('').map((c,i)=>h`<span className="ch" key=${i} aria-hidden="true">${c}</span>`)}</h1>
+  <${motion.div} className="role" ...${A(.3)}>Aspiring Full Stack Developer<//>
+  <${motion.div} className="btns l" ...${A(.4)}><${Mag} onClick=${()=>go(3)}>View projects<//><${Mag} className="gh" onClick=${()=>go(2)}>Résumé<//><//>
+  <${Card}/>
+ </div>
+ <${motion.div} className="hc" initial=${{opacity:0,scale:.5}} animate=${{opacity:1,scale:1}} transition=${{delay:BASE,duration:1.4,ease:EA}}><${Core} hero=${1}/><//></div>`;
+}
+/* 2. Call to action */
+const CTA=({go})=>h`<div className="in ctr">
+ <${motion.p} className="mono mu" ...${A(0)}>> available for placements and internships<//>
+ <${motion.h2} style=${{fontSize:'clamp(2.4rem,8vw,5.5rem)'}} ...${A(.12)}>Let’s build the<br/>next layer.<//>
+ <${motion.div} className="btns" ...${A(.3)}><${Mag} onClick=${()=>go(5)}>Hire me<//><${Mag} className="gh" onClick=${()=>go(5)}>Contact<//><//></div>`;
+/* 3. Resume */
+function Resume(){
+ const[s,setS]=useState(0);
+ const click=e=>{if(CFG.resume==='#')e.preventDefault();if(s)return;setS(1);setTimeout(()=>setS(2),1500);setTimeout(()=>setS(0),4200)};
+ return h`<div className="in ctr"><${Hd} t="Résumé" sub="One page, ready to download."/>
+  <${motion.div} ...${A(.15)}><${motion.a} href=${CFG.resume} download="Lavanya_Resume.pdf" className="gl doc" onClick=${click} whileHover=${{y:-10,rotateX:7,rotateY:-7}} whileTap=${{scale:.97}} style=${{transformPerspective:900}}>
+   <span className="scan"/><b style=${{fontSize:'1.4rem'}}>Lavanya</b><div className="mono mu" style=${{fontSize:12}}>aspiring full stack developer</div>
+   ${[['Education','B.Tech CSE, expected 2027'],['Skills','React, Spring Boot, Flask, MySQL'],['Projects','4 full stack and AI projects'],['Internships','2 full stack roles']].map(([k,v],i)=>h`<${motion.div} key=${k} className="dr" initial=${{opacity:0,y:10}} animate=${{opacity:1,y:0}} transition=${{delay:BASE+.4+i*.1}}><span className="mono">${k}</span><b>${v}</b><//>`)}
+   <${motion.div} className="dl" animate=${{width:s?'100%':'0%'}} transition=${{duration:s===1?1.4:.3}}/>
+   <div className="dbt">${['download .pdf','preparing…','downloaded ✓'][s]}</div><//><//></div>`;
+}
+/* 4. Projects as product showcase */
+const PR=[['Inventory & GST Billing System','Full stack billing app with dashboard, product management and invoice generation. Secure REST APIs with JWT and GST calculation logic.',['Java','Spring Boot','MySQL','JWT','HTML/CSS/JS']],['AI Chatbot (RAG)','Answers questions from custom documents using retrieval-augmented generation, with a locally hosted Ollama LLM and vector-based semantic search.',['Python','Ollama','LLM','Vector Retrieval']],['SkillProof','Quiz-based platform that verifies user skills with JWT-secured access. Backend APIs and models built with Flask, SQLAlchemy and MySQL.',['Python','Flask','SQLAlchemy','MySQL','JWT']],['Student Management System','Web app to manage student records digitally with full CRUD operations and MySQL storage.',['Python','Flask','MySQL']]];
+function Projects(){
+ const[k,setK]=useState(0),[tl,setT]=useState({x:0,y:0}),[hot,setH]=useState(false),p=PR[k];
+ const mv=e=>{const b=e.currentTarget.getBoundingClientRect();setT({x:-((e.clientY-b.top)/b.height-.5)*8,y:((e.clientX-b.left)/b.width-.5)*8})};
+ return h`<div className="in"><${Hd} t="Projects" sub="Select a build to inspect it."/>
+ <div className="pj"><${motion.div} className="pl" role="tablist" ...${A(.1)}>${PR.map((q,i)=>h`<button key=${i} role="tab" aria-selected=${i===k} className=${i===k?'on':''} onClick=${()=>setK(i)}>${q[0]}</button>`)}<//>
+  <${motion.div} ...${A(.2)}><${motion.div} className="gl pp" style=${{transformPerspective:1000}} animate=${{rotateX:tl.x,rotateY:tl.y}} transition=${{type:'spring',stiffness:140,damping:16}} onMouseMove=${mv} onMouseEnter=${()=>setH(true)} onMouseLeave=${()=>{setT({x:0,y:0});setH(false)}} onTouchStart=${()=>setH(true)} onTouchEnd=${()=>setH(false)}>
+   <${AnimatePresence} mode="wait"><${motion.div} key=${k} initial=${{opacity:0,x:-24,filter:'blur(8px)'}} animate=${{opacity:1,x:0,filter:'blur(0px)'}} exit=${{opacity:0,x:24,filter:'blur(8px)'}} transition=${{duration:.35}}>
+    <span className="mono mu" style=${{fontSize:12}}>0${k+1} / 0${PR.length}</span><h2>${p[0]}</h2><p>${p[1]}</p><div className="tags">${p[2].map(t=>h`<span className="tag" key=${t}>${t}</span>`)}</div>
+    <a className="btn gh" href=${CFG.gh} target="_blank" rel="noopener noreferrer">View on GitHub</a><//><//>
+   <div className="pv"><${Core} key=${k} k=${k} hot=${hot}/></div><//><//></div></div>`;
+}
+/* 5. Systems + skills */
+const GR=[['Languages',['Java','Python','SQL','JavaScript']],['Frontend',['HTML5','CSS3','JavaScript','React']],['Backend',['Spring Boot','Flask','REST APIs','JWT']],['Data and AI',['MySQL','RAG','Ollama','LLM','Vector retrieval']],['Tools',['Git','GitHub','IntelliJ IDEA','VS Code','Postman']],['Concepts',['OOP','MVC','CRUD','Data structures and algorithms']]];
+const ARCH=`<g fill="rgba(10,16,28,.8)" stroke="#4de1ff" stroke-opacity=".6"><rect x="70" y="14" width="220" height="56" rx="12"/><rect x="70" y="122" width="220" height="56" rx="12" stroke="#4f8cff"/><rect x="70" y="230" width="220" height="56" rx="12" stroke="#9b8cff"/></g>
+<g fill="none" stroke="#4de1ff" stroke-opacity=".5" stroke-dasharray="4 6"><path d="M180 70V122"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/></path><path d="M180 178V230"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/></path></g>
+<g fill="#4de1ff"><circle r="3.5"><animateMotion dur="1.8s" repeatCount="indefinite" path="M180 70V122"/></circle><circle r="3.5" fill="#9b8cff"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M180 230V178"/></circle><circle r="3.5"><animateMotion dur="1.8s" begin=".4s" repeatCount="indefinite" path="M180 178V230"/></circle></g>
+<g font-family="JetBrains Mono" font-size="12" fill="#cfe6ff" text-anchor="middle"><text x="180" y="46">React client</text><text x="180" y="154">Backend API + JWT</text><text x="180" y="262">MySQL</text></g>`;
+const Systems=()=>h`<div className="in"><${Hd} t="Systems" sub="How I build, and what I build with."/>
+ <div className="sys"><${motion.div} className="gl" style=${{padding:16}} ...${A(.1)}><svg viewBox="0 0 360 300" width="100%" role="img" aria-label="React client to backend API to MySQL" dangerouslySetInnerHTML=${{__html:ARCH}}/><//>
+ <div className="mt">${GR.map(([g,L],gi)=>h`<${motion.div} key=${g} ...${A(.15+gi*.1)}><div className="mono mu" style=${{fontSize:12,marginBottom:10}}>${g}</div><div className="tags">${L.map((c,j)=>h`<${motion.span} key=${c} className="tag" initial=${{opacity:0,scale:.7}} animate=${{opacity:1,scale:1}} transition=${{delay:BASE+.3+gi*.1+j*.05,type:'spring',stiffness:300,damping:20}} whileHover=${{y:-3}}>${c}<//>`)}</div><//>`)}</div></div></div>`;
+/* 6. Contact */
+function Contact(){
+ const[f,setF]=useState({n:'',e:'',m:''}),[er,setEr]=useState({}),[tc,setTc]=useState(false),[st,setSt]=useState(0);
+ const val=x=>({n:x.n.trim().length<2?'Enter your name.':'',e:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x.e)?'':'Enter a valid email, like you@example.com.',m:x.m.trim().length<10?'Write at least 10 characters.':''});
+ const ch=k=>e=>{const x={...f,[k]:e.target.value};setF(x);if(tc)setEr(val(x))};
+ const sub=e=>{e.preventDefault();setTc(true);const v=val(f);setEr(v);if(v.n||v.e||v.m)return;setSt(1);
+  setTimeout(()=>{setSt(2);const a=document.createElement('a');a.href='mailto:'+CFG.email+'?subject='+encodeURIComponent('Portfolio message from '+f.n)+'&body='+encodeURIComponent(f.m+'\n\n'+f.n+' ('+f.e+')');a.click()},1400)};
+ const E=k=>er[k]&&h`<${motion.small} className="er" initial=${{opacity:0,y:-6}} animate=${{opacity:1,y:0}}>${er[k]}<//>`;
+ return h`<div className="in ctr"><${Hd} t="Contact" sub="Send a note and your mail app opens with the draft."/>
+ <${AnimatePresence} mode="wait">${st===2?h`<${motion.div} key="ok" className="ctr" initial=${{opacity:0,scale:.7}} animate=${{opacity:1,scale:1}}>
+  <svg width="110" height="110" viewBox="0 0 52 52" fill="none" stroke="#4de1ff" strokeWidth="2.5" strokeLinecap="round"><${motion.circle} cx="26" cy="26" r="23" initial=${{pathLength:0}} animate=${{pathLength:1}} transition=${{duration:.7}}/><${motion.path} d="M15 27l8 8 14-16" initial=${{pathLength:0}} animate=${{pathLength:1}} transition=${{delay:.6,duration:.5}}/></svg>
+  <h3>Transmission ready</h3><p className="mu">Press send in your mail app to finish.</p><//>`
+ :h`<${motion.form} key="f" className="gl" noValidate onSubmit=${sub} ...${A(.15)} exit=${{opacity:0,y:-30}}>
+  <label className="fld">name<input value=${f.n} onChange=${ch('n')} autoComplete="name"/>${E('n')}</label>
+  <label className="fld">email<input type="email" value=${f.e} onChange=${ch('e')} autoComplete="email"/>${E('e')}</label>
+  <label className="fld">message<textarea rows="4" value=${f.m} onChange=${ch('m')}/>${E('m')}</label>
+  <${Mag} type="submit" disabled=${st===1}>${st===1?'Sending…':'Send message'}<//><//>`}<//></div>`;
+}
+/* 7. Articles */
+const TL=[['Full Stack Developer Intern','Skillonex Academy','Full stack web development across frontend, backend and database layers.'],['Full Stack Developer Intern','InternPe','Built and delivered web application features with full stack technologies, Git and GitHub.']],CE=[['Introduction to AI and Fundamentals','IBM'],['Java Certification','Simplilearn']];
+const Articles=()=>h`<div className="in"><${Hd} t="Experience" sub="Internships and certifications."/>
+ <div className="tl">${TL.map(([t,o,d],i)=>h`<${motion.div} key=${o} className="tli" initial=${{opacity:0,x:-30}} animate=${{opacity:1,x:0}} transition=${{delay:BASE+i*.15,duration:.7,ease:EA}}><span className="dot"/><div className="gl art"><div><b>${t}</b><br/><small>${o}</small><p className="mu" style=${{fontSize:14,marginTop:6}}>${d}</p></div></div><//>`)}</div>
+ <h3 className="mu" style=${{fontSize:'1rem',margin:'26px 0 12px'}}>Certificates</h3>
+ <div className="net2">${CE.map(([t,o],i)=>h`<${motion.div} key=${t} className="gl nc2" initial=${{opacity:0,y:24}} animate=${{opacity:1,y:0}} transition=${{delay:BASE+.4+i*.12,duration:.7,ease:EA}} whileHover=${{y:-6}}><b>${t}</b><small>${o}</small><//>`)}</div></div>`;
+/* 8. Network */
+const Network=()=>h`<div className="in ctr"><${Hd} t="Find me online"/><div className="net">${[['github','GitHub','Code and projects',CFG.gh],['linkedin','LinkedIn','Experience and contact',CFG.li],['mail','Email',CFG.email,'mailto:'+CFG.email]].map(([n,l,d,u],i)=>h`
+ <${motion.a} key=${n} className="gl nc" href=${u} target="_blank" rel="noopener noreferrer" initial=${{opacity:0,y:40,scale:.9}} animate=${{opacity:1,y:0,scale:1}} transition=${{delay:BASE+i*.12,duration:.7,ease:EA}} whileHover=${{y:-8}} whileTap=${{scale:.97}}><${Ic} n=${n}/><h3>${l}</h3><span className="mu">${d}</span><//>`)}</div></div>`;
+
+/* App shell: Framer Motion transitions, one style per layer */
+const D={opacity:1,scale:1,x:0,y:0,filter:'blur(0px)'};
+const TR=[d=>({y:40*d,scale:.98}),d=>({x:60*d}),d=>({scale:.94}),d=>({y:-40*d}),d=>({x:-60*d}),d=>({scale:1.05}),d=>({y:40*d}),d=>({scale:.96})];
+const VA={e:c=>({...D,opacity:0,filter:'blur(10px)',...TR[c.i](c.d)}),c:D,x:c=>{const r=TR[c.i](c.d);return{...D,opacity:0,filter:'blur(10px)',x:-(r.x||0),y:-(r.y||0),scale:r.scale?2-r.scale:1}}};
+const PG=[Hero,CTA,Resume,Projects,Systems,Contact,Articles,Network];
+const NAMES=['home','hire','resume','projects','systems','contact','experience','network'],LAB=['Home','Hire me','Résumé','Projects','Systems','Contact','Experience','Network'];
+const pad=n=>String(n).padStart(2,'0');
+function Intro(){
+ const[x,setX]=useState(false);useEffect(()=>{const t=setTimeout(()=>setX(true),1900);return()=>clearTimeout(t)},[]);
+ return h`<${AnimatePresence}>${!x&&h`<${motion.div} key="i" className="intro" initial=${{clipPath:'inset(0% 0% 0% 0%)'}} animate=${{clipPath:'inset(0% 0% 0% 0%)'}} exit=${{clipPath:'inset(0% 0% 100% 0%)'}} transition=${{duration:.9,ease:EA}}><div><${Num} to=${100}/>%</div><${motion.i} initial=${{scaleX:0}} animate=${{scaleX:1}} transition=${{duration:1.6,ease:'easeInOut'}}/><small>loading portfolio</small><//>`}<//>`;
+}
+function App(){
+ const init=Math.max(0,NAMES.indexOf(location.hash.slice(1)));window.__L=init;
+ const[[i,d],setP]=useState([init,1]);const cur=useRef(init),lock=useRef(true);
+ const go=useCallback(n=>{if(lock.current||n<0||n>=NAMES.length||n===cur.current)return;lock.current=true;setTimeout(()=>lock.current=false,900);setP([n,n>cur.current?1:-1]);cur.current=n;window.__L=n;try{history.replaceState(null,'','#'+NAMES[n])}catch(e){}},[]);
+ useEffect(()=>{
+  setTimeout(()=>lock.current=false,2000);
+  const edge=()=>{const el=document.querySelector('.pg');return el?[el.scrollTop<=0,el.scrollTop+el.clientHeight>=el.scrollHeight-2]:[true,true]};
+  const wh=e=>{const[t,b]=edge();if(e.deltaY>20&&b)go(cur.current+1);else if(e.deltaY<-20&&t)go(cur.current-1)};
+  let sy=0,eg=[true,true];const ts=e=>{sy=e.touches[0].clientY;eg=edge()};
+  const te=e=>{const dy=sy-e.changedTouches[0].clientY;if(dy>70&&eg[1])go(cur.current+1);else if(dy<-70&&eg[0])go(cur.current-1)};
+  const kd=e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName))return;if(e.key==='ArrowDown'||e.key==='PageDown')go(cur.current+1);if(e.key==='ArrowUp'||e.key==='PageUp')go(cur.current-1)};
+  const hc=()=>{const k=NAMES.indexOf(location.hash.slice(1));if(k>=0)go(k)};
+  addEventListener('wheel',wh,{passive:true});addEventListener('touchstart',ts,{passive:true});addEventListener('touchend',te,{passive:true});addEventListener('keydown',kd);addEventListener('hashchange',hc);
+  return()=>{removeEventListener('wheel',wh);removeEventListener('touchstart',ts);removeEventListener('touchend',te);removeEventListener('keydown',kd);removeEventListener('hashchange',hc)};
+ },[go]);
+ const P=PG[i];
+ return h`<${React.Fragment}><${Intro}/>
+  <div className="brand">~/lavanya</div>
+  <nav className="rail" aria-label="Layers">${LAB.map((l,k)=>h`<button key=${k} aria-label=${l} aria-current=${k===i} className=${k===i?'on':''} onClick=${()=>go(k)}><span>${l}</span></button>`)}</nav>
+  <${AnimatePresence} mode="wait" custom=${{i,d}}><${motion.main} key=${i} className="pg" custom=${{i,d}} variants=${VA} initial="e" animate="c" exit="x" transition=${{duration:.5,ease:EA}}><${P} go=${go}/><//><//>
+  <div className="hud" aria-hidden="true"><span>layer ${pad(i+1)}/${pad(NAMES.length)}</span><b>${LAB[i]}</b><div><i style=${{transform:'scaleX('+(i+1)/NAMES.length+')'}}/></div></div>
+  <div className="arr"><button aria-label="Previous layer" onClick=${()=>go(cur.current-1)}>↑</button><button aria-label="Next layer" onClick=${()=>go(cur.current+1)}>↓</button></div><//>`;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h`<${App}/>`);
+</script></body></html>
